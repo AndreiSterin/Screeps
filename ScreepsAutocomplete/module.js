@@ -1,0 +1,6 @@
+/**
+ * @class
+ */
+module = {
+	exports: {}
+}
