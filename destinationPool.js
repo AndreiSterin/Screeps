@@ -58,12 +58,16 @@ var destinationPool =  {
         var destinations = this.destination_list(type);
         for (var dest_idx in destinations) {
             var id = destinations[dest_idx].id;
-            if (Memory.destination[id] < 1) {
-                console.log(Memory.destination[id]);
+            if (!Memory.destination[id]) {
+                Memory.destination[id] = 0;
+            } else if (Memory.destination[id] < 1) {
                 Memory.destination[id] = Memory.destination[id] + 1;
-                Memory.m_creep_destination[name] = id;
-                return Game.getObjectById(id);
+            } else {
+                continue;
             }
+            console.log(Memory.destination[id]);
+            Memory.m_creep_destination[name] = id;
+            return Game.getObjectById(id);
         }
     },
     free: function(type, name) {
