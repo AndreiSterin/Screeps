@@ -33,7 +33,7 @@ var destinationPool =  {
     },
     create_sources_map_from_scratch: function(type) {
         var destination_list = this.destination_list(type);
-        this.cleanup_dead_creeps(type);
+        // this.cleanup_dead_creeps(type);
         // TODO compare destination_list with creep_destination (update)
 
         // Build destination object now.
